@@ -18,6 +18,7 @@ group :development, :test do
   gem 'mysql2', '>= 0.4.4', '< 0.6.0'
   gem 'rspec-rails'
   gem 'rails-controller-testing'
+  gem 'rubocop-airbnb'
 end
 
 group :development do
