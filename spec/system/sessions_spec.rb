@@ -18,7 +18,7 @@ RSpec.describe "Sessions", type: :system do
       end
 
       it "ヘッダーにログインページへのリンクがあることを確認" do
-        expect(page).to have_content 'ログイン', href: login_path
+        expect(page).to have_link 'ログイン', href: login_path
       end
 
       it "ログインフォームのラベルが正しく表示される" do
@@ -51,7 +51,7 @@ RSpec.describe "Sessions", type: :system do
         expect(page).to have_link 'Varterとは？', href: about_path
         expect(page).to have_link 'ユーザー登録', href: signup_path
         expect(page).to have_link 'ログイン', href: login_path
-        expect(page).to have_link 'ログアウト', href: logout_path
+        expect(page).not_to have_link 'ログアウト', href: logout_path
 
         fill_in "user_email", with: user.email
         fill_in "user_password", with: user.password
@@ -61,7 +61,7 @@ RSpec.describe "Sessions", type: :system do
         expect(page).to have_link 'ユーザー一覧', href: users_path
         expect(page).to have_link 'プロフィール', href: user_path(user)
         expect(page).to have_link 'ログアウト', href: logout_path
-        expect(page).to have_link 'ログイン', href: login_path
+        expect(page).not_to have_link 'ログイン', href: login_path
       end
     end
   end
