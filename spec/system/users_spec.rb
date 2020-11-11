@@ -5,7 +5,7 @@ RSpec.describe "Users", type: :system do
 
   describe "ユーザー登録ページ" do
     before do
-      visit sign_up_path
+      visit signup_path
     end
 
     context "ページレイアウト" do

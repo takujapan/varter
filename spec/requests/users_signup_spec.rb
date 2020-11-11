@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "ユーザー登録", type: :request do
   before do
-    get sign_up_path
+    get signup_path
   end
 
   it "正常なレスポンスを返すこと" do
@@ -20,6 +20,7 @@ RSpec.describe "ユーザー登録", type: :request do
     redirect_to @user
     follow_redirect!
     expect(response).to render_template('users/show')
+    expect(is_logged_in?).to be_truthy
   end
 
   it "無効なユーザーで登録" do
