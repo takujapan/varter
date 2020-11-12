@@ -10,7 +10,7 @@ services:
       ports:
           - "3306:3306"
       volumes:
-          - ./db/mysql/volumes:/var/lib/mysql
+          - mysql_data:/var/lib/mysql
 
     web:
       # 同じディレクトリ配下にあるDockerfileをビルド
@@ -32,3 +32,4 @@ services:
 # マウントするデータ領域を指定
 volumes:
   gem_data:
+  mysql_data:
