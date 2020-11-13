@@ -60,13 +60,18 @@ p {
   margin-top: 12px;
   margin-bottom: 12px;
 }
- #logo {
+#logo {
   float: left;
-  margin-top: 10px;
   margin-bottom: 10px;
+  position: absolute;
+  left: 50px;
   img {
-    width: 150px;
+    width: 250px;
   }
+}
+
+#home_logo {
+  margin-top: 100px;
 }
 
 // フッター
@@ -104,3 +109,16 @@ input {
     color: $state-danger-text;
   }
 }
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+ }
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+ }
