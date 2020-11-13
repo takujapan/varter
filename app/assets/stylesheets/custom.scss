@@ -60,13 +60,18 @@ p {
   margin-top: 12px;
   margin-bottom: 12px;
 }
- #logo {
+#logo {
   float: left;
-  margin-top: 10px;
   margin-bottom: 10px;
+  position: absolute;
+  left: 50px;
   img {
-    width: 150px;
+    width: 250px;
   }
+}
+
+#home_logo {
+  margin-top: 100px;
 }
 
 // フッター
