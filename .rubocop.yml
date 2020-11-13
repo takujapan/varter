@@ -38,3 +38,12 @@ Style/MixinUsage:
 
 Style/MutableConstant:
   Enabled: false
+
+Rails/HelperInstanceVariable:
+  Enabled: false
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Style/MultilineTernaryOperator:
+  Enabled: false
