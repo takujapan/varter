@@ -60,10 +60,14 @@ p {
 }
 
 // ヘッダー
-.navbar ul{
+.navbar {
+  background-color: white;
+  ul{
   margin-top: 12px;
   margin-bottom: 12px;
+  } 
 }
+
 #logo {
   float: left;
   margin-top: 10px;
