@@ -6,13 +6,14 @@ RSpec.describe "商品登録", type: :request do
 
   context "ログインしているユーザーの場合" do
     before do
-      login_for_request(user)
       get new_item_path
+      login_for_request(user)
     end
 
-    it "レスポンスが正常に表示されること" do
-      expect(response).to have_http_status "200"
-      expect(response).to render_template('items/new')
+    context "フレンドリーフォワーディング" do
+      it "レスポンスが正常に表示されること" do
+        expect(response).to redirect_to new_item_url
+      end
     end
 
     it "有効な商品データで登録できること" do
