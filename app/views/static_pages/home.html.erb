@@ -1,4 +1,11 @@
-<center>
-  <%= image_tag 'home_logo.jpg', id: 'home_logo' %>
-  <h2>あなたの「いらない」は、だれかの「ほしい」</h2>
-</center>
+<% if logged_in? %>
+  <div class="container">
+    <h3>みんなの商品 (<%= @feed_items.count %>)</h3>
+    <%= render 'shared/feed' %>
+  </div>
+<% else %>
+  <center>
+    <%= image_tag 'home_logo.jpg', id: 'home_logo' %>
+    <h2>あなたの「いらない」は、だれかの「ほしい」</h2>
+  </center>
+<% end %>
