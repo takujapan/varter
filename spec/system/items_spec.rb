@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Items", type: :system do
   let!(:user) { create(:user) }
+  let!(:item) { create(:item, user: user ) }
 
   describe "商品登録ページ" do
     before do
@@ -37,6 +38,24 @@ RSpec.describe "Items", type: :system do
         fill_in "説明", with: "昔買ったドローンです"
         click_button "登録する"
         expect(page).to have_content "商品名を入力してください"
+      end
+    end
+  end
+
+  describe "商品詳細ページ" do
+    context "ページレイアウト" do
+      before do
+        login_for_system(user)
+        visit item_path(item)
+      end
+
+      it "正しいタイトルが表示されること" do
+        expect(page).to have_title full_title("#{item.name}")
+      end
+
+      it "商品情報が表示されること" do
+        expect(page).to have_content item.name
+        expect(page).to have_content item.description
       end
     end
   end

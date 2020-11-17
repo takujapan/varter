@@ -21,7 +21,7 @@ RSpec.describe "商品登録", type: :request do
                                            description: "最新のドローンです" } }
       }.to change(Item, :count).by(1)
       follow_redirect!
-      expect(response).to render_template('static_pages/home')
+      expect(response).to render_template('items/show')
     end
 
     it "無効な商品データでは登録できないこと" do
