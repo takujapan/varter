@@ -34,6 +34,18 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    if current_user.admin? || current_user?(@item.user)
+      @item.destroy
+      flash[:success] = "商品が削除されました"
+      redirect_to request.referrer == user_url(@item.user) ? user_url(@item.user) : root_url
+    else
+      flash[:danger] = "他人の商品は削除できません"
+      redirect_to root_url
+    end
+  end
+
   private
 
     def item_params

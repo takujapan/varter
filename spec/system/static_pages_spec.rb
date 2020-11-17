@@ -29,7 +29,7 @@ RSpec.describe "StaticPages", type: :system do
           visit root_path
           expect(page).to have_content "みんなの商品 (#{user.items.count})"
           expect(page).to have_css "div.pagination"
-          Item.take(3).each do |i|
+          Item.take(5).each do |i|
             expect(page).to have_link i.name
           end
         end
@@ -37,6 +37,13 @@ RSpec.describe "StaticPages", type: :system do
         it "「出品する」リンクが表示されること" do
           visit root_path
           expect(page).to have_link "出品する", href: new_item_path
+        end
+
+        it "商品を削除後、削除成功のフラッシュが表示されること" do
+          visit root_path
+          click_on '削除'
+          page.driver.browser.switch_to.alert.accept
+          expect(page).to have_content '商品が削除されました'
         end
       end
     end

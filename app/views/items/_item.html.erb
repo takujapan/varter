@@ -5,4 +5,8 @@
   <span class="timestamp">
     <%= time_ago_in_words(item.created_at) %>前に投稿
   </span>
+  <% if current_user.admin? || (current_user == item.user) %>
+    <%= link_to "削除", item_path(item), method: :delete,
+                       data: { confirm: "本当に削除しますか？" } %>
+  <% end %>
 </li>

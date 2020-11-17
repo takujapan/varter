@@ -146,7 +146,7 @@ RSpec.describe "Users", type: :system do
       end
 
       it "商品の情報が表示されていることを確認" do
-        Item.take(3).each do |item|
+        Item.take(5).each do |item|
           expect(page).to have_link item.name
           expect(page).to have_content item.description
           expect(page).to have_content item.user.name

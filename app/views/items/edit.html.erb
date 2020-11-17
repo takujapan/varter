@@ -13,6 +13,9 @@
           <%= f.text_field :description, size: "60x4", class: 'form-control', id: 'item_description' %>
         </div>
         <%= f.submit "更新する", class: "btn btn-primary" %>
+        <p></p>
+        <%= link_to "商品を削除する", item_path(@item), method: :delete,
+                                  data: { confirm: "本当にこの商品を削除してよろしいですか？" } %>
       <% end %>
     </div>
   </div>

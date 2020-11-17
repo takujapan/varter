@@ -6,6 +6,10 @@
       <% if current_user == @item.user %>
         <%= link_to "編集", edit_item_path(@item), class: 'edit-item' %>　
       <% end %>
+      <% if current_user.admin? || (current_user == @item.user) %>
+        <%= link_to "削除", item_path(@item), method: :delete, class: 'delete-item',
+                                      data: { confirm: "本当に削除しますか？" } %>
+      <% end %>
     </div>
     <h4><%= @item.description %></h4>
   </div>
