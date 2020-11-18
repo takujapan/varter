@@ -1,16 +1,23 @@
 <% provide(:title, "#{@item.name}") %>
 <div class="container">
   <div class="row">
-    <h2 class="item-name"><%= @item.name %></h2>
-    <div class="change-item">
-      <% if current_user == @item.user %>
-        <%= link_to "編集", edit_item_path(@item), class: 'edit-item' %>　
-      <% end %>
-      <% if current_user.admin? || (current_user == @item.user) %>
-        <%= link_to "削除", item_path(@item), method: :delete, class: 'delete-item',
-                                      data: { confirm: "本当に削除しますか？" } %>
-      <% end %>
+    <div class="col-md-4">
+      <span class="picture">
+        <%= link_to((image_tag @item.picture.url), item_path(@item.id), class: 'item-picture') if @item.picture.url.present? %>
+      </span>
     </div>
-    <h4><%= @item.description %></h4>
+    <div class="col-md-8">
+      <h2 class="item-name"><%= @item.name %></h2>
+      <div class="change-item">
+        <% if current_user == @item.user %>
+          <%= link_to "編集", edit_item_path(@item), class: 'edit-item' %>　
+        <% end %>
+        <% if current_user.admin? || (current_user == @item.user) %>
+          <%= link_to "削除", item_path(@item), method: :delete, class: 'delete-item',
+                                        data: { confirm: "本当に削除しますか？" } %>
+        <% end %>
+      </div>
+      <h4><%= @item.description %></h4>
+    </div>
   </div>
 </div>

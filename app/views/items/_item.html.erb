@@ -1,6 +1,9 @@
 <li id="item-<%= item.id %>">
   <%= link_to gravatar_for(item.user, size: 50), item.user %>
   <span class="name"><%= link_to item.name, item_path(item) %></span>
+  <span>
+    <%= link_to((image_tag item.picture.url), item_path(item.id), class: 'item-picture') if item.picture.url.present? %>
+  </span>
   <span class="description"><%= item.description %></span><br>
   <span class="timestamp">
     <%= time_ago_in_words(item.created_at) %>前に投稿
