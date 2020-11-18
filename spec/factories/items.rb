@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :item do
-    name { Faker::Drone.name }
+    name { "Reiwa Drone" }
     description { "昔買ったドローンです" }
     association :user
     created_at { Time.current }
