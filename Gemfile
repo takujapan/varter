@@ -16,6 +16,8 @@ gem 'faker'
 gem 'jquery-rails'
 gem 'will_paginate',           '3.1.7'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'carrierwave',             '1.2.2'
+gem "mini_magick",             '>= 4.9.4'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -41,6 +43,7 @@ group :test do
 end
 
 group :production do
+  gem 'fog', '1.42'
   gem 'pg'
 end
 
