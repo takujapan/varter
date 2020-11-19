@@ -34,12 +34,6 @@ RSpec.describe "Items", type: :system do
         expect(page).to have_content "商品が登録されました"
       end
 
-      it "画像無しで登録すると、デフォルト画像が割り当てられること" do
-        fill_in "商品名", with: "Reiwa Drone"
-        click_button "登録する"
-        expect(page).to have_link(href: item_path(Item.first))
-      end
-
       it "無効な情報で商品登録を行うと商品登録失敗のフラッシュが表示されること" do
         fill_in "商品名", with: ""
         fill_in "説明", with: "昔買ったドローンです"
