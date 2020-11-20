@@ -9,6 +9,11 @@ class Item < ApplicationRecord
   validates :description, length: { maximum: 140 }
   validate  :picture_size
 
+  # 料理に付属するコメントのフィードを作成
+  def feed_comment(item_id)
+    Comment.where("item_id = ?", item_id)
+  end
+
   private
 
     # アップロードされた画像のサイズを制限する
