@@ -10,8 +10,8 @@ class CommentsController < ApplicationController
       # 自分以外のユーザーからコメントがあったときのみ通知を作成、コメントは通知種別2
       if @user != current_user
         @user.notifications.create(item_id: @item.id, variety: 2,
-                                  from_user_id: current_user.id,
-                                  content: @comment.content)
+                                   from_user_id: current_user.id,
+                                   content: @comment.content)
         @user.update_attribute(:notification, true)
       end
     else
