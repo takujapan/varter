@@ -13,6 +13,12 @@ class FavoritesController < ApplicationController
       format.html { redirect_to request.referrer || root_url }
       format.js
     end
+    # 自分以外のユーザーからお気に入り登録があったときのみ通知を作成、お気に入り登録は通知種別1
+    if @user != current_user
+      @user.notifications.create(item_id: @item.id, variety: 1,
+                                 from_user_id: current_user.id)
+      @user.update_attribute(:notification, true)
+    end
   end
 
   def destroy
