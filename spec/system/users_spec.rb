@@ -242,5 +242,77 @@ RSpec.describe "Users", type: :system do
         expect(page).to have_content item.name
       end
     end
+
+    context "通知作成" do
+      before do
+        login_for_system(user)
+      end
+
+      context "自分以外のユーザーの商品に対して" do
+        before do
+          visit item_path(other_item)
+        end
+
+        it "お気に入り登録によって通知が作成されること" do
+          find('.like').click
+          visit item_path(other_item)
+          expect(page).to have_css 'li.no_notification'
+          logout
+          login_for_system(other_user)
+          expect(page).to have_css 'li.new_notification'
+          visit notifications_path
+          expect(page).to have_css 'li.no_notification'
+          expect(page).to have_content "あなたの商品が#{user.name}さんにお気に入り登録されました。"
+          expect(page).to have_content other_item.name
+          expect(page).to have_content other_item.description
+          expect(page).to have_content other_item.created_at.strftime("%Y/%m/%d(%a) %H:%M")
+        end
+
+        it "コメントによって通知が作成されること" do
+          fill_in "comment_content", with: "コメントしました"
+          click_button "コメント"
+          expect(page).to have_css 'li.no_notification'
+          logout
+          login_for_system(other_user)
+          expect(page).to have_css 'li.new_notification'
+          visit notifications_path
+          expect(page).to have_css 'li.no_notification'
+          expect(page).to have_content "あなたの商品に#{user.name}さんがコメントしました。"
+          expect(page).to have_content '「コメントしました」'
+          expect(page).to have_content other_item.name
+          expect(page).to have_content other_item.description
+          expect(page).to have_content other_item.created_at.strftime("%Y/%m/%d(%a) %H:%M")
+        end
+      end
+
+      context "自分の商品に対して" do
+        before do
+          visit item_path(item)
+        end
+
+        it "お気に入り登録によって通知が作成されないこと" do
+          find('.like').click
+          visit item_path(item)
+          expect(page).to have_css 'li.no_notification'
+          visit notifications_path
+          expect(page).not_to have_content 'お気に入りに登録されました。'
+          expect(page).not_to have_content item.name
+          expect(page).not_to have_content item.description
+          expect(page).not_to have_content item.created_at
+        end
+
+        it "コメントによって通知が作成されないこと" do
+          fill_in "comment_content", with: "自分でコメント"
+          click_button "コメント"
+          expect(page).to have_css 'li.no_notification'
+          visit notifications_path
+          expect(page).not_to have_content 'コメントしました。'
+          expect(page).not_to have_content '自分でコメント'
+          expect(page).not_to have_content item.name
+          expect(page).not_to have_content other_item.description
+          expect(page).not_to have_content other_item.created_at
+        end
+      end
+    end
   end
 end
