@@ -5,66 +5,7 @@
   box-sizing:         border-box;
 }
 
-// 全ページ共通
-body {
-  padding-top: 80px;
-}
-
-section {
-  overflow: auto;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.center {
-  text-align: center;
-  h1 {
-    margin-bottom: 10px;
-  }
-}
-
-.alert {
-  margin-top: 20px;
-}
-
-// テキストの見栄え
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
-h1 {
-  font-size: 4em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-family: 'Comic Sans MS'
-}
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #777;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-
 // ヘッダー
-.navbar {
-  background-color: white;
-  ul{
-  margin-top: 12px;
-  margin-bottom: 12px;
-  }
-}
-
 #logo {
   float: left;
   margin-top: 10px;
@@ -74,17 +15,13 @@ p {
   }
 }
 
-// フッター
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-  small {
-    float: center;
-  }
+//// ページボディ部 ////
+#fh5co-wireframe {
+  padding-top: 7em;
+  padding-bottom: 0;
 }
 
+// フッター
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
