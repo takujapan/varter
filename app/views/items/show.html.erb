@@ -1,28 +1,30 @@
 <% provide(:title, "#{@item.name}") %>
-<% @comments = @item.feed_comment(@item.id) %>
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <span class="picture">
-        <%= link_to((image_tag @item.picture.thumb400.url), item_path(@item.id), class: 'item-picture') if @item.picture.url.present? %>
-      </span>
-      <%= render 'users/favorite_form' %>
-    </div>
-    <div class="col-md-8">
-      <h2 class="item-name"><%= @item.name %></h2>
-      <div class="change-item">
-        <% if current_user == @item.user %>
-          <%= link_to "編集", edit_item_path(@item), class: 'edit-item' %>　
-        <% end %>
-        <% if current_user.admin? || (current_user == @item.user) %>
-          <%= link_to "削除", item_path(@item), method: :delete, class: 'delete-item',
-                                        data: { confirm: "本当に削除しますか？" } %>
-        <% end %>
+<% @comments  = @item.feed_comment(@item.id) %>
+<div id="fh5co-portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <span class="picture">
+          <%= link_to((image_tag @item.picture.thumb400.url), item_path(@item.id), class: 'item-picture') if @item.picture.url.present? %>
+        </span>
+        <%= render 'users/favorite_form' %>
       </div>
-      <h4><%= @item.description %></h4>
-      <div class="comment">
-        <%= render "comments/feed_comments" %>
-        <%= render "comments/new" %>
+      <div class="col-md-8">
+        <h2 class="item-name"><%= @item.name %></h2>　　
+        <div class="change-item">
+          <% if current_user == @item.user %>
+            <%= link_to "編集", edit_item_path(@item), class: 'edit-item' %>　
+          <% end %>
+          <% if current_user.admin? || (current_user == @item.user) %>
+            <%= link_to "削除", item_path(@item), method: :delete, class: 'delete-item',
+                                          data: { confirm: "本当に削除しますか？" } %>
+          <% end %>
+        </div>
+        <h4><%= @item.description %></h4>
+        <div class="comment">
+          <%= render "comments/feed_comments" %>
+          <%= render "comments/new" %>
+        </div>
       </div>
     </div>
   </div>

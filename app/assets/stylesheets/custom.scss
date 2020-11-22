@@ -1,3 +1,6 @@
+$main-magenta: #dd356e;
+$main-yellow: #fee856;
+
 // ミックスイン
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -5,23 +8,74 @@
   box-sizing:         border-box;
 }
 
-// ヘッダー
+//// ヘッダー ////
+.menu-1 a:hover {
+  text-decoration: none;
+  text-decoration-width: 1px;
+}
+
+// 上下幅
+.fh5co-nav .top-menu {
+  padding: 18px 0;
+}
+
 #logo {
-  float: left;
-  margin-top: 10px;
-  margin-bottom: 10px;
   img {
-    width: 150px;
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
   }
 }
 
+// スマホ用：ヘッダーメニューが横棒三本になるところを境にロゴを拡大
+@media screen and (max-width: 768px) {
+  #logo {
+    img {
+      max-width: 400%;
+      height: auto;
+      box-sizing: border-box;
+    }
+  }
+}
+
+// スマホ閲覧時、横棒三本をページ上部に固定
+.fh5co-nav-toggle {
+  position: fixed;
+}
+
+// ロゴの上下位置調整
+.fh5co-nav #fh5co-logo {
+  font-size: 0px;
+}
+
 //// ページボディ部 ////
+#fh5co-portfolio {
+  padding: 0;
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  h3 {
+    text-align: left;
+  }
+}
+
+#fh5co-about {
+  padding: 0;
+}
+
 #fh5co-wireframe {
   padding-top: 7em;
   padding-bottom: 0;
 }
 
-// フッター
+//// フッター ////
+#fh5co-footer {
+  margin-top: 3em;
+  padding: 1em 0;
+  border-top: 1px solid #eaeaea;
+}
+
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
@@ -85,6 +139,10 @@ input {
   margin-top: 20px;
 }
 
+.account-delete {
+  margin-top: 20px;
+}
+
 //// ユーザー一覧ページ ////
 .users {
   list-style: none;
@@ -143,9 +201,36 @@ span.picture {
 }
 
 //// トップページ（ログイン後） ////
-// 「新しい料理を作る」ボタン
+// 「出品する」ボタン
 .btn-record {
   margin-top: 3em;
+  color: black;
+  background-color: $main-yellow;
+  border-color: $main-yellow;
+}
+
+// 「CSV出力」ボタン
+.btn-csv {
+  color: black;
+  background-color: palegreen;
+  border-color: palegreen;
+}
+
+// 商品一覧
+.item-user {
+  text-align: right;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+h3.item-name {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.item-description {
+  margin-top: 10px;
 }
 
 //// 商品登録ページ ////
