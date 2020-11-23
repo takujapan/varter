@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :keyword do
-    name { "MyString" }
-    item_id { 1 }
+    name { "Reiwa Drone" }
+    association :item
   end
 end
