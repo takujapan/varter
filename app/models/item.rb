@@ -2,6 +2,8 @@ class Item < ApplicationRecord
   belongs_to :user
   has_many :favorites, dependent: :destroy
   has_many :comments,  dependent: :destroy
+  has_many :keywords,  dependent: :destroy
+  accepts_nested_attributes_for :keywords
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
