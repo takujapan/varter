@@ -184,41 +184,50 @@ RSpec.describe "Items", type: :system do
       it "フィードの中から検索ワードに該当する結果が表示されること" do
         create(:item, name: 'SenseFly eBee Classic', user: user)
         create(:item, name: 'SenseFly eBee X', user: other_user)
-        create(:item, name: 'Delair DT26E Surveillance', user: user)
-        create(:item, name: 'Delair DT26E LiDAR', user: other_user)
+        create(:item, name: 'DJI Mavic 2 Pro', user: user)
+        create(:item, name: 'DJI Matrice 600 Pro', user: other_user)
 
         # 誰もフォローしない場合
-        fill_in 'q_name_cont', with: 'Sen'
+        fill_in 'q_name_or_keywords_name_cont', with: 'Sen'
         click_button '検索'
         expect(page).to have_css 'h3', text: "”Sen”の検索結果：1件"
         within find('.items') do
           expect(page).to have_css 'li', count: 1
         end
-        fill_in 'q_name_cont', with: 'Del'
+        fill_in 'q_name_or_keywords_name_cont', with: 'DJI'
         click_button '検索'
-        expect(page).to have_css 'h3', text: "”Del”の検索結果：1件"
+        expect(page).to have_css 'h3', text: "”DJI”の検索結果：1件"
         within find('.items') do
           expect(page).to have_css 'li', count: 1
         end
 
         # other_userをフォローする場合
         user.follow(other_user)
-        fill_in 'q_name_cont', with: 'Sen'
+        fill_in 'q_name_or_keywords_name_cont', with: 'Sen'
         click_button '検索'
         expect(page).to have_css 'h3', text: "”Sen”の検索結果：2件"
         within find('.items') do
           expect(page).to have_css 'li', count: 2
         end
-        fill_in 'q_name_cont', with: 'Del'
+        fill_in 'q_name_or_keywords_name_cont', with: 'DJI'
         click_button '検索'
-        expect(page).to have_css 'h3', text: "”Del”の検索結果：2件"
+        expect(page).to have_css 'h3', text: "”DJI”の検索結果：2件"
         within find('.items') do
           expect(page).to have_css 'li', count: 2
+        end
+
+        # キーワードも含めて検索に引っかかること
+        create(:keyword, name: 'DJI Mavic Air', item: Item.first)
+        fill_in 'q_name_or_keywords_name_cont', with: 'DJI'
+        click_button '検索'
+        expect(page).to have_css 'h3', text: "”DJI”の検索結果：3件"
+        within find('.items') do
+          expect(page).to have_css 'li', count: 3
         end
       end
 
       it "検索ワードを入れずに検索ボタンを押した場合、商品一覧が表示されること" do
-        fill_in 'q_name_cont', with: ''
+        fill_in 'q_name_or_keywords_name_cont', with: ''
         click_button '検索'
         expect(page).to have_css 'h3', text: "商品一覧"
         within find('.items') do
