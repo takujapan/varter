@@ -62,10 +62,10 @@ Item.create!(
                              { name: "思い出" },
                              { name: "世界" },
                              { name: "ブラウン" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" }
+                             { name: "海外" },
+                             { name: "おしゃれ" },
+                             { name: "お洒落" },
+                             { name: "トラベル" }
                            ],
     },
     {
@@ -80,10 +80,10 @@ Item.create!(
                              { name: "かわいい" },
                              { name: "置き物" },
                              { name: "子供" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" }
+                             { name: "可愛い" },
+                             { name: "ハンドメイド" },
+                             { name: "DIY" },
+                             { name: "プレゼント" }
                            ],
     },
     {
@@ -98,10 +98,10 @@ Item.create!(
                              { name: "半袖" },
                              { name: "ロゴ" },
                              { name: "シンプル" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" }
+                             { name: "白" },
+                             { name: "おしゃれ" },
+                             { name: "お洒落" },
+                             { name: "ワンポイント" }
                            ],
     },
     {
@@ -116,10 +116,10 @@ Item.create!(
                              { name: "可変式" },
                              { name: "créer" },
                              { name: "ブラック" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" }
+                             { name: "重量" },
+                             { name: "24" },
+                             { name: "筋肉" },
+                             { name: "黒" }
                            ],
     },
     {
@@ -134,10 +134,10 @@ Item.create!(
                              { name: "かわいい" },
                              { name: "置き物" },
                              { name: "子供" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" }
+                             { name: "可愛い" },
+                             { name: "プレゼント" },
+                             { name: "ハンドメイド" },
+                             { name: "工作" }
                            ],
     },
     {
@@ -152,10 +152,10 @@ Item.create!(
                              { name: "半袖" },
                              { name: "ロゴ" },
                              { name: "シンプル" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" }
+                             { name: "黒" },
+                             { name: "お洒落" },
+                             { name: "おしゃれ" },
+                             { name: "ワンポイント" }
                            ],
     },
     {
@@ -167,13 +167,13 @@ Item.create!(
                              { name: "コーヒー" },
                              { name: "カップ" },
                              { name: "モーニング" },
-                             { name: "レンジ対応" },
+                             { name: "レンジ" },
                              { name: "シンプル" },
-                             { name: "紺色" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" }
+                             { name: "紺" },
+                             { name: "ルーティン" },
+                             { name: "休憩" },
+                             { name: "用品" },
+                             { name: "プレゼント" }
                            ],
     },
     {
@@ -188,10 +188,10 @@ Item.create!(
                              { name: "手作り" },
                              { name: "かわいい" },
                              { name: "オーナメント" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" }
+                             { name: "可愛い" },
+                             { name: "プレゼント" },
+                             { name: "絵の具" },
+                             { name: "生活" }
                            ],
     },
     {
@@ -206,10 +206,10 @@ Item.create!(
                              { name: "コットン" },
                              { name: "ロゴ" },
                              { name: "書類" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" }
+                             { name: "おしゃれ" },
+                             { name: "お洒落" },
+                             { name: "外出" },
+                             { name: "デート" }
                            ],
     },
     {
@@ -224,10 +224,10 @@ Item.create!(
                              { name: "スタイリング" },
                              { name: "髪の毛" },
                              { name: "デート" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" }
+                             { name: "ワックス" },
+                             { name: "美容" },
+                             { name: "美容室" },
+                             { name: "プレゼント" }
                            ],
     },
     {
@@ -242,10 +242,10 @@ Item.create!(
                              { name: "手作り" },
                              { name: "かわいい" },
                              { name: "セット" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" }
+                             { name: "可愛い" },
+                             { name: "プレゼント" },
+                             { name: "子供" },
+                             { name: "ストラップ" }
                            ],
     },
     {
@@ -260,10 +260,10 @@ Item.create!(
                              { name: "シンプル" },
                              { name: "ロゴ" },
                              { name: "プルオーバー" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" }
+                             { name: "おしゃれ" },
+                             { name: "お洒落" },
+                             { name: "おそろい" },
+                             { name: "お揃い" }
                            ],
     },
     {
@@ -278,10 +278,10 @@ Item.create!(
                              { name: "留め具" },
                              { name: "牛革" },
                              { name: "視力" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" }
+                             { name: "目" },
+                             { name: "めがね" },
+                             { name: "眼鏡" },
+                             { name: "プレゼント" }
                            ],
     },
     {
@@ -296,10 +296,10 @@ Item.create!(
                              { name: "ハンドメイド" },
                              { name: "かわいい" },
                              { name: "海外" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" }
+                             { name: "可愛い" },
+                             { name: "手紙" },
+                             { name: "手作り" },
+                             { name: "友達" }
                            ],
     },
     {
@@ -314,10 +314,10 @@ Item.create!(
                              { name: "男女兼用" },
                              { name: "文字" },
                              { name: "綿" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" },
-                             { name: "" }
+                             { name: "子供" },
+                             { name: "シンプル" },
+                             { name: "可愛い" },
+                             { name: "かわいい" }
                            ],
     }
   ]
