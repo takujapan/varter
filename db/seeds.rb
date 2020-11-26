@@ -324,28 +324,30 @@ Item.create!(
 )
 
 item3 = Item.find(3)
+item5 = Item.find(5)
 item6 = Item.find(6)
-item12 = Item.find(12)
-item13 = Item.find(13)
+item9 = Item.find(9)
+item10 = Item.find(10)
 item14 = Item.find(14)
 item15 = Item.find(15)
 
 # お気に入り登録
-user3.favorite(item13)
+user3.favorite(item5)
+user3.favorite(item10)
 user3.favorite(item14)
 user1.favorite(item15)
-user2.favorite(item12)
+user2.favorite(item9)
 
 # コメント
 item15.comments.create(user_id: user1.id, content: "可愛いですね♪")
-item12.comments.create(user_id: user2.id, content: "素敵ですね♪")
+item9.comments.create(user_id: user2.id, content: "素敵ですね♪")
 
 # 通知
 user3.notifications.create(user_id: user3.id, item_id: item15.id,
                            from_user_id: user1.id, variety: 1)
 user3.notifications.create(user_id: user3.id, item_id: item15.id,
                            from_user_id: user1.id, variety: 2, content: "可愛いですね♪")
-user3.notifications.create(user_id: user3.id, item_id: item12.id,
+user3.notifications.create(user_id: user3.id, item_id: item9.id,
                            from_user_id: user2.id, variety: 1)
-user3.notifications.create(user_id: user3.id, item_id: item12.id,
+user3.notifications.create(user_id: user3.id, item_id: item9.id,
                            from_user_id: user2.id, variety: 2, content: "素敵ですね♪")
