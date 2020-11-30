@@ -1,6 +1,150 @@
 <% provide(:title, "Varterとは？") %>
 <div id="fh5co-about">
   <div class="container">
-    <h1>Varterとは？</h1>
+    <div class="row">
+      <div class="col-md-10">
+        <h1 class="title-about">Varterとは？</h1>
+        <h4>ものを無料で譲り合えるサービスです。</h4>
+        <br>
+        <p>【名前の由来】<br>
+        譲り合いを通して、ものに新たな価値を生み出したい。そして、譲り合うこと自体が価値あるものであってほしい。<br>
+        そんな願いを込めて、英語で『価値』を意味するvalueと『物々交換』を意味するbarterをかけ合わせて誕生したのが ”Varter” です。</p>
+      </div>
+      <div class="col-md-10">
+        <h2 class="title-use">主な使い方</h2>
+        <div>
+          <ol class="main-use">
+            <li class="A">出品する</li>
+            <li class="B">欲しいものをさがす</li>
+          </ol>
+        </div>
+        <p class="about-line"></p>
+        <ol class="main-use">
+          <li class="A">出品する</li>
+        </ol>
+        <div class="use-content">
+          <p>　　家庭で余っているもの、もらってほしいものなどを出品します。</p>
+          <p>　　『いらないけどゴミに出すのはちょっと...』</p>
+          <p>　　『捨ててしまったら罪悪感を感じる』</p>
+          <p>　　『捨てるのはもったいない』</p>
+          <p>　　そんなお悩みを解決します♪</p>
+        </div>
+        <ol class="how-to-use">
+          <li>商品を写真や説明と共に出品</li>
+          <div class="use-explanation">
+            <div class="row">
+              <div class="col-md-4">
+                <p>①「出品する」をクリック</p>
+                <%= image_tag("/images/about1.jpg", :alt => "about1", class: "use-picture") %>
+              </div>
+              <div class="col-md-4">
+                <p>②「ファイルを選択」から写真をアップロード ➡︎ 商品情報(※)を入力 ➡︎ 「登録する」をクリック</p>
+                <%= image_tag("/images/about2.jpg", :alt => "about2", class: "use-picture") %>
+              </div>
+              <div class="col-md-4">
+                <p>③ 出品完了</p>
+                <%= image_tag("/images/about3.jpg", :alt => "about3", class: "use-picture") %>
+              </div>
+              <p>(※) 商品情報には商品名と商品説明が登録できます。</p>
+            </div>
+          </div>
+          <li>通知でお知らせを受ける</li>
+          <div class="use-explanation">
+            <div class="row">
+              <div class="col-md-4">
+                <p>① 出品した商品がお気に入り登録またはコメントされると、画面右上の「通知」が赤くなる</p>
+                <%= image_tag("/images/about4.jpg", :alt => "about4", class: "use-picture") %>
+              </div>
+              <div class="col-md-8">
+                <p>② 「通知」をクリックして詳細を確認</p>
+                <%= image_tag("/images/about5.jpg", :alt => "about5", class: "use-picture") %>
+              </div>
+            </div>
+          </div>
+        </ol>
+        <ol class="main-use">
+          <li class="B">欲しいものをさがす</li>
+        </ol>
+        <div class="use-content">
+          <p>　　欲しいものが見つかる。見ているうちに欲しくなる。そんな商品に出会えます。</p>
+          <p>　　『買うのはもったいないけど、あったら便利』</p>
+          <p>　　『買って失敗するのがこわい...』</p>
+          <p>　　『中古でも十分！！！』</p>
+          <p>　　そんなお気持ちに応えます♪</p>
+          <p>　　欲しい商品があれば出品者にメッセージを送ろう♫</p>
+        </div>
+        <ol class="how-to-use">
+          <li>商品を検索</li>
+          <div class="use-explanation">
+            <div class="row">
+              <div class="col-md-4">
+                <p>① 画面上部の「キーワードでさがす」をクリック</p>
+                <%= image_tag("/images/about6.jpg", :alt => "about6", class: "use-picture") %>
+              </div>
+              <div class="col-md-4">
+                <p>② 欲しい商品に関連するキーワードを入力して「検索」をクリック(例: バッグ)</p>
+                <%= image_tag("/images/about7.jpg", :alt => "about7", class: "use-picture") %>
+              </div>
+              <div class="col-md-4">
+                <p>③ キーワードの関連商品が表示される</p>
+                <%= image_tag("/images/about8.jpg", :alt => "about8", class: "use-picture") %>
+              </div>
+            </div>
+          </div>
+          <li>気になる商品を「お気に入り」に登録してまとめて閲覧</li>
+          <div class="use-explanation">
+            <div class="row">
+              <div class="col-md-4">
+                <p>①「お気に入りに登録する」をクリック</p>
+                <%= image_tag("/images/about9.jpg", :alt => "about9", class: "use-picture") %>
+              </div>
+              <div class="col-md-4">
+                <p>② 画面右上の「お気に入り」をクリック</p>
+                <%= image_tag("/images/about10.jpg", :alt => "about10", class: "use-picture") %>
+              </div>
+              <div class="col-md-4">
+                <p>③ 気になる商品をまとめて閲覧できる</p>
+                <%= image_tag("/images/about11.jpg", :alt => "about11", class: "use-picture") %>
+              </div>
+            </div>
+          </div>
+          <li>商品にコメント</li>
+          <div class="use-explanation">
+            <div class="row">
+              <div class="col-md-4">
+                <p>① コメントしたい商品を選択</p>
+                <%= image_tag("/images/about12.jpg", :alt => "about12", class: "use-picture") %>
+              </div>
+              <div class="col-md-4">
+                <p>① コメント欄にコメントを記入➡︎「コメント」をクリック</p>
+                <%= image_tag("/images/about13.jpg", :alt => "about13", class: "use-picture") %>
+              </div>
+              <div class="col-md-4">
+                <p>② コメントが追加される</p>
+                <%= image_tag("/images/about14.jpg", :alt => "about14", class: "use-picture") %>
+              </div>
+            </div>
+          </div>
+          <li>欲しい商品があれば出品者にメッセージをおくる</li>
+          <div class="use-explanation">
+            <div class="row">
+              <div class="col-md-4">
+                <p>① 出品者の名前をクリック</p>
+                <%= image_tag("/images/about15.jpg", :alt => "about15", class: "use-picture") %>
+              </div>
+              <div class="col-md-4">
+                <p>② 出品者プロフィールからメールアドレスを入手</p>
+                <%= image_tag("/images/about16.jpg", :alt => "about16", class: "use-picture") %>
+              </div>
+              <div class="col-md-4">
+                <p>③ 出品者にメールを送信し、直接のやりとりが可能</p>
+                <%= image_tag("/images/about17.jpg", :alt => "about17", class: "use-picture") %>
+              </div>
+            </div>
+            <p>※商品配送料は受取人のご負担となります。</p>
+          </div>
+        </ol>
+      </div>
+    </div>
   </div>
 </div>

@@ -4,6 +4,7 @@
   <div class="row favorite-item">
     <div class="col-md-2">
       <%= link_to((image_tag @item.picture.url), item_path(@item), class: 'item-picture') %>
+      <%= render 'users/favorite_form' %>
     </div>
     <div class="col-md-7">
       <p><%= link_to @item.name, item_path(@item) %></p>
