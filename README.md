@@ -24,4 +24,4 @@
 # 環境
 ・Ruby on Rails  
 ・Docker  
-・MySQL  
+・PostgreSQL  
