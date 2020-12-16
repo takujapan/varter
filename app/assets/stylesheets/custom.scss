@@ -31,10 +31,16 @@ $main-yellow: #fee856;
 @media screen and (max-width: 768px) {
   #logo {
     img {
-      max-width: 400%;
+      max-width: 180%;
       height: auto;
       box-sizing: border-box;
     }
+  }
+
+  #home_logo {
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
   }
 }
 
