@@ -21,7 +21,7 @@
 ・ログイン状態の保持  
 ・モデルに対するバリデーション  
 
-# 環境
+# 開発環境
 ・Ruby on Rails  
 ・Docker  
-・PostgreSQL  
+・MySQL  
